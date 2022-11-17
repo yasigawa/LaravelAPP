@@ -1,0 +1,3 @@
+開発メモ
+・git clonse https://github.com/yasigawa/LaravelAPP.git
+・コマンド
