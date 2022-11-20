@@ -1,3 +1,51 @@
 開発メモ
 ・git clonse https://github.com/yasigawa/LaravelAPP.git
 ・コマンド
+
+composer create-project laravel/laravel LaravelAPP
+
+mysql -u ユーザー名 -D データベース名 -p
+mysql -u homestead -D homestead -p
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+
+
+CREATE USER 'ユーザ名'@'ホスト名' IDENTIFIED BY 'パスワード';
+
+CREATE DATABASE homestead;
+CREATE USER 'homestead'@'localhost' IDENTIFIED BY 'secret';
+CREATE USER 'homestead'@'homestead' IDENTIFIED BY 'secret';
+GRANT ALL PRIVILEGES ON * . * TO 'homestead'@'localhost';
+
+php artisan migrate:rollback
+php artisan migrate:reset;
+php artisan migrate
+
+php artisan make:model Book
+php artisan make:seeder BooksTableSeeder
+php artisan db:seed
+
+php artisan serve --host=localhost --port=8000
+
+git remote add origin https://github.com/yasigawa/LaravelAPP.git
+
+git commit -m "leravel add"
+git push origin master
+
+git使い方メモ
+[ 開発者 ] 作業対象のソースを clone または pull します。
+[ 開発者 ] 作業用のブランチを作成します。
+[ 開発者 ] 機能追加、改修といった開発作業を行います。
+[ 開発者 ] 作業が完了したら push します。
+[ 開発者 ] プルリクエストを作成します。
+[ レビュー・マージ担当者 ] 通知されたプルリクエストから変更を確認しレビューします。
+[ レビュー・マージ担当者 ] レビュー結果を判断し、必要ならば開発者にフィードバックします。
+[ レビュー・マージ担当者 ] レビューの結果、問題がない場合はマージします。
+[ レビュー・マージ担当者 ] レビューの結果、対応自体が不要となるなど、プルリクエスト自体が必要ない場合はクローズします。
+
+$ git config --global user.name "xxxx"
+$ git config --global user.email "xxxxxx@gmail.com"
