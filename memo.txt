@@ -47,5 +47,14 @@ git使い方メモ
 [ レビュー・マージ担当者 ] レビューの結果、問題がない場合はマージします。
 [ レビュー・マージ担当者 ] レビューの結果、対応自体が不要となるなど、プルリクエスト自体が必要ない場合はクローズします。
 
-$ git config --global user.name "xxxx"
-$ git config --global user.email "xxxxxx@gmail.com"
+git config --global user.name "ysigawa2"
+git config --global user.email "ysigawa2@gmail.com"
+
+###########################################
+Gitでbranchを切ろうとしたら「fatal: Not a valid object name: 'master'.」とエラーが出たときの対処法
+fatal: Not a valid object name: 'master'.
+　masterが有効なオブジェクトじゃない。
+ $git add . 
+ $git commit -a
+ $git log
+
