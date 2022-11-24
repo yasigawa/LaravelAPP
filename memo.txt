@@ -1,4 +1,4 @@
-開発メモ
+#開発メモ
 ・git clonse https://github.com/yasigawa/LaravelAPP.git
 ・コマンド
 
@@ -82,4 +82,19 @@ fatal: Not a valid object name: 'master'.
 
 暗号化キーの確認
 php artisan key:generate
+
+#githubメモ
+git clone
+git checkout main
+
+git branch xxxx
+git checkout xxxx
+開発する
+git add xxx.xxx
+git commit -m "CCCCC"
+
+git push origin xxx
+
+GitHub プルリクエスト
+
 
