@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('price');
             $table->string('author', 50)->nullable();
             $table->timestamps();
-        });
+            });
     }
 
     /**

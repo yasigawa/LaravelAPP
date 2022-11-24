@@ -24,9 +24,12 @@ class BooksTableSeeder extends Seeder
               ['name' => 'PHP Book',
                'price' => 2000,
                'author' => 'PHPER'],
-              ['name' => 'Laravel Book',
+               ['name' => 'Laravel Book',
                'price' => 3000,
                'author' => null],
+               ['name' => 'おれかおれ以外か',
+               'price' => 30000,
+               'author' => 'ろーらんどごりら'],
               ['name' => 'Ruby Book',
                'price' => 2500,
                'author' => 'Rubyist']

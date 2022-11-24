@@ -19,4 +19,7 @@ Route::get('/', function () {
 });
 
 //Route::get('/sample', 'App\Http\Controllers\SampleController@showPage');
-Route::get('book', 'App\Http\Controllers\BookController@index');
+//Route::get('book', 'App\Http\Controllers\BookController@index');
+//Route::get('book/{id}', 'BookController@show');
+Route::resource('book', 'App\Http\Controllers\BookController');
+

@@ -2,6 +2,7 @@
 ・git clonse https://github.com/yasigawa/LaravelAPP.git
 ・コマンド
 
+https://qiita.com/sano1202/items/6021856b70e4f8d3dc3d
 composer create-project laravel/laravel LaravelAPP
 
 mysql -u ユーザー名 -D データベース名 -p
@@ -18,20 +19,35 @@ CREATE USER 'ユーザ名'@'ホスト名' IDENTIFIED BY 'パスワード';
 
 CREATE DATABASE homestead;
 CREATE USER 'homestead'@'localhost' IDENTIFIED BY 'secret';
-CREATE USER 'homestead'@'homestead' IDENTIFIED BY 'secret';
+#CREATE USER 'homestead'@'homestead' IDENTIFIED BY 'secret';
 GRANT ALL PRIVILEGES ON * . * TO 'homestead'@'localhost';
+#GRANT ALL PRIVILEGES ON * . * TO 'homestead'@'homestead';
+#DROP USER 'homestead'@'homestead';
+DROP USER 'homestead'@'localhost';
+(データベースユーザー作成)
+mysql> CREATE USER dbuser@localhost IDENTIFIED BY 'dbpassword';
+(データベースに対するユーザーのアクセス権限付与)
+mysql> GRANT ALL PRIVILEGES ON dbname.* TO dbuser@'localhost';
 
+migrate:resetコマンドを使用します。
+migrate:rollback
 php artisan migrate:rollback
 php artisan migrate:reset;
-php artisan migrate
-
+x
 php artisan make:model Book
 php artisan make:seeder BooksTableSeeder
 php artisan db:seed
 
+#バリデーション
+php artisan make:request BookRequest
+
+♯スタート
 php artisan serve --host=localhost --port=8000
 
 git remote add origin https://github.com/yasigawa/LaravelAPP.git
+git clone https://github.com/yasigawa/LaravelAPP.git
+
+composer update
 
 git commit -m "leravel add"
 git push origin master
@@ -57,4 +73,13 @@ fatal: Not a valid object name: 'master'.
  $git add . 
  $git commit -a
  $git log
+
+#
+ソースコードをcloneした後に、ローカルでサーバーを立ち上げてページアクセスすると画面に「500 | SERVER ERROR」が表示。
+
+[2022-11-20 08:44:49] production.ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at C:\\laravel\\php6\\LaravelAPP\\vendor\\laravel\\framework\\src\\Illuminate\\Encryption\\EncryptionServiceProvider.php:79)
+[stacktrace]
+
+暗号化キーの確認
+php artisan key:generate
 
